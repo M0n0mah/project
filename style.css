@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: #0a2b3c;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.25),
+  inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+  8px 30px 30px rgba(0, 0, 0, .4),
+  inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.container h2 {
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: rgb(15, 107, 228);
+}
+
+.container .skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.25),
+  inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+  8px 30px 30px rgba(0, 0, 0, .4),
+  inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+  transition: .5s;
+}
+
+.container:hover .skills {
+  filter: blur(5px);
+  opacity: 0.2;
+}
+
+.container .skills:hover {
+  filter: blur(0px);
+  opacity: 1;
+}
+
+.container .skills h3 {
+  min-width: 200px;
+  text-align: right;
+  padding-right: 20px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.container .skills .rating {
+  position: relative;
+  display: flex;
+  margin: 10px 10px 5px 0;
+  flex-direction: row-reverse;
+}
+
+.container .skills .rating input {
+  position: relative;
+  width: 20px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  overflow: hidden;
+}
+
+.container .skills .rating input::before {
+  content: '\f005';
+  position: absolute;
+  font-family: fontAwesome;
+  font-size: 34px;
+  position: absolute;
+  left: 4px;
+  color: black;
+  transition: .5s;
+}
+
+.container .skills .rating input:nth-child(2n+1)::before {
+  right: 4px;
+  left: initial;
+}
+
+.container .skills .rating input:hover ~ input::before,
+.container .skills .rating input:hover::before,
+.container .skills .rating input:checked ~ input::before,
+.container .skills .rating input:checked::before {
+  color: rgb(27, 111, 221);
+}
